@@ -42,9 +42,7 @@
  1999  docker pull amitvashist7/k8s-tiny-web
  2000  docker images
 ```
-
-
-er images
+```
  1032  docker run -it ubuntu:16.04
  1033  docker ps
  1034  docker container ls
