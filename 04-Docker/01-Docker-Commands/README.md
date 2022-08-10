@@ -146,3 +146,141 @@ cker-Images
  1142  curl 172.17.0.2
 ```
 
+
+```
+
+
+```
+
+
+```
+
+ 1167  cp -rf v1 v2
+ 1168  ;s
+ 1169  ls
+ 1170  cd v2/
+ 1171  ls
+ 1172  mv Dockerfile myapache-file
+ 1173  ls
+ 1174  vim myapache-file
+ 1175  s
+ 1176  ls
+ 1177  vim index.html
+ 1178  ls
+ 1179  docker build -t myapache .
+ 1180  ls
+ 1181  docker build -t myapache -f myapache-file .
+ 1182  docker images
+ 1183  docker run -d --name test-apache-4 myapache
+ 1184  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+ 1185  curl 172.17.0.6
+ 1186  docker tag d3d23e5a87be myapache:v1
+ 1187  docker tag 027edfdd5ef2 myapache:v2
+ 1188  docker images
+ 1189  docker run -d --name test-apache-4 myapache:v1
+ 1190  docker run -d --name test-apache-5 myapache:v1
+ 1191  docker run -d --name test-apache-6 myapache:v2
+ 1192  docker ps
+ 1193  s
+ 1194  docker ps
+ 1195  curl -vv 172.17.0.6
+ 1196  s
+ 1197  cd ..
+ 1198  ls
+ 1199  cp -rf v2 v3
+ 1200  ls
+ 1201  cd v3/
+ 1202  ls
+ 1203  mv myapache-file Dockerfile
+ 1204  ls
+ 1205  vim index.html
+ 1206  ls
+ 1207  vim Dockerfile
+ 1208  ls
+ 1209  docker build -t myapache:v3  .
+ 1210  docker images
+ 1211  docker run -d --name test-apache-7 myapache:v3
+ 1212  docker ps
+ 1213  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+ 1214  curl -vv 172.17.0.8
+ 1215  curl  172.17.0.8
+ 1216  curl  172.17.0.9
+ 1217  curl  172.17.0.9:80
+ 1218  cd ..
+ 1219  ls
+ 1220  cp -rf v3 v4
+ 1221  cd v4/
+ 1222  s
+ 1223  ls
+ 1224  vim Dockerfile
+ 1225  s
+ 1226  docker build -t myapache:v4  .
+ 1227  docker run -d --name test-apache-8 myapache:v4
+ 1228  docker ps
+ 1229  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+ 1230  curl 172.17.0.10:3306
+ 1231  curl 172.17.0.10:8080
+ 1232  docker inspect e5fcc6c87a28
+ 1233  ls
+ 1234  cd ..
+ 1235  ls
+ 1236  cp -rf v4 v5
+ 1237  ls
+ 1238  cd v5/
+ 1239  ls
+ 1240  vim Dockerfile
+ 1241  ls
+ 1242  docker build -t myapache:v5  .
+ 1243  docker images
+ 1244  vim index.html
+ 1245  docker build -t myapache:v5  .
+ 1246  docker images
+ 1247  docker run -d --name test-apache-9 myapache:v5
+ 1248  curl 172.17.0.11
+ 1249  ls
+ 1250  cd ../../../
+ 1251  ls
+ 1252  cd ..
+ 1253  ls
+ 1254  docker images
+ 1255  docker push myapache:v5
+ 1256  docker login
+ 1257  docker logout
+ 1258  docker login
+ 1259  docker push myapache:v5
+ 1260  docker images
+ 1261  docker tag d1e615b4043d amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1262  docker tag d1e615b4043d amitvashist7/devops-netmagic-08-aug-2022-myapache:latest
+ 1263  docker images
+ 1264  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache
+ 1265  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1266  docker tag c9134a18cded amitvashist7/devops-netmagic-08-aug-2022-myapache:v4
+ 1267  docker tag myapache:v3 amitvashist7/devops-netmagic-08-aug-2022-myapache:v3
+ 1268  docker tag myapache:v2 amitvashist7/devops-netmagic-08-aug-2022-myapache:v2
+ 1269  docker tag myapache:v1 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1270  docker images
+ 1271  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache:v4
+ 1272  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache:v3
+ 1273  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache:v2
+ 1274  docker push amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1275  docker images
+ 1276  docker images -q
+ 1277  docker rmi $(docker images -q)
+ 1278  docker kill $(docker ps -q)
+ 1279  docker rm $(docker ps -aq)
+ 1280  docker ps -a
+ 1281  docker rmi $(docker images -q)
+ 1282  docker rmi $(docker images -q) --force
+ 1283  docker images
+ 1284  ls
+ 1285  docker images
+ 1286  docker logout
+ 1287  docker run -d  --name test-1 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1288  docker images
+ 1289  docker ps
+ 1290  docker run -d  --name test-1 amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1291  docker run -d  --name test-2 amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1292  docker ps
+ 1293  curl 172.17.0.2
+ 1294  curl 172.17.0.3
+```
