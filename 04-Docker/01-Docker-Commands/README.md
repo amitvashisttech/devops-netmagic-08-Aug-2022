@@ -102,3 +102,47 @@
  1088  docker images
 
 ```
+
+
+
+
+```
+cker-Images
+ 1107  ls
+ 1108  cd 02-Docker-Images/
+ 1109  ls
+ 1110  mkdir apache/v1
+ 1111  mkdir apache/v1 -p
+ 1112  ls
+ 1113  cd apache/
+ 1114  ls
+ 1115  cd v1/
+ 1116  ls
+ 1117  vim Dockerfile
+ 1118  ls
+ 1119  docker ps -a
+ 1120  docker run -itd ubuntu:16.04
+ 1121  docker ps
+ 1122  ls
+ 1123  docker build -t myapache .
+ 1124  docker images
+ 1125  docker run -d --name test-apache-1 myapache
+ 1126  docker ps
+ 1127  docker inspect 0~test-apache-11~
+ 1128  docker inspect test-apache-1
+ 1129  docker ps
+ 1130  curl 172.17.0.3
+ 1131  history
+ 1132  ls
+ 1133  docker ps
+ 1134  docker run -d --name test-apache-2 myapache
+ 1135  docker run -d --name test-apache-3 myapache
+ 1136  docker ps
+ 1137  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
+ 1138  curl 172.17.0.3
+ 1139  curl 172.17.0.4
+ 1140  curl 172.17.0.5
+ 1141  curl 172.17.0.6
+ 1142  curl 172.17.0.2
+```
+
