@@ -30,3 +30,15 @@
  1978  docker container ls
  1979  docker container ls -a
 ```
+
+
+```
+1993  docker images
+ 1994  docker pull ubuntu
+ 1995  docker images
+ 1996  docker pull ubuntu:16.04
+ 1997  docker ps
+ 1998  docker images
+ 1999  docker pull amitvashist7/k8s-tiny-web
+ 2000  docker images
+```
