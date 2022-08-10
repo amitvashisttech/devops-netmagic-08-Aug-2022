@@ -286,8 +286,7 @@ cker-Images
 ```
 
 
-
-er images
+```
  1307  docker ps
  1308  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
  1309  curl 172.17.0.2
