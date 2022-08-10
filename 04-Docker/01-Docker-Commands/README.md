@@ -284,3 +284,62 @@ cker-Images
  1293  curl 172.17.0.2
  1294  curl 172.17.0.3
 ```
+
+
+
+er images
+ 1307  docker ps
+ 1308  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+ 1309  curl 172.17.0.2
+ 1310  docker network ls
+ 1311  docker network inspect bridge
+ 1312  ip addr
+ 1313  curl 172.17.0.2
+ 1314  route -n
+ 1315  curl 172.17.0.2
+ 1316  docker ps
+ 1317  ip addr
+ 1318  docker run -d  --name test-3 -p 8081:80 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1319  docker ps
+ 1320  netstat -tulnp
+ 1321  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+ 1322  docker ps
+ 1323  systemctl status docker
+ 1324  docker ps
+ 1325  docker run -d  --name test-4 -p 8081:80 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1326  docker run -d  --name test-4 -p 8082:80 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1327  docker run -d  --name test-5 -p 8082:80 amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1328  docker ps
+ 1329  docker images
+ 1330  docker inspect amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1331  docker ps
+ 1332  history
+ 1333  docker run -d  --name test-6 -P  amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
+ 1334  docker ps
+ 1335  docker run -d  --name test-7 -P  amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1336  docker ps
+ 1337  docker run -d  --name test-8 -P  amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1338  docker run -d  --name test-9 -P  amitvashist7/devops-netmagic-08-aug-2022-myapache:v5
+ 1339  docker ps
+ 1340  history
+ 1341  ls
+ 1342  cd 04-Docker/02-Docker-Images/apache/v4/
+ 1343  ls
+ 1344  cat Dockerfile
+ 1345  vim Dockerfile
+ 1346  docker build -t myapache:v6  .
+ 1347  ls
+ 1348  docker images
+ 1349  vim Dockerfile
+ 1350  docker build -t myapache:v6  .
+ 1351  docker images
+ 1352  docker run -d myapache:v6
+ 1353  docker ps
+ 1354  docker run -d -P myapache:v6
+ 1355  docker ps
+ 1356  docker run -d -p 9090:80 -p 9091:8080 -p 9092:3306 myapache:v6
+ 1357  docker ps
+ 1358  docker run -d -p 9095:80  myapache:v6
+ 1359  docker ps
+
+```

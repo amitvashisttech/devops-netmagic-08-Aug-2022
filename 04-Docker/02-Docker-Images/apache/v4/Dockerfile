@@ -1,5 +1,5 @@
 # Base Image 
-FROM ubuntu:16.04 
+FROM amitvashist7/devops-netmagic-08-aug-2022-myapache:v1
 
 # Maintainer of this Image 
 MAINTAINER Amit Vashist <amitvashist7@outlook.com>
@@ -14,6 +14,7 @@ RUN apt-get install apache2 -y
 COPY index.html /var/www/html/index.html
  
 # Expose Port 
+EXPOSE 80
 EXPOSE 8080
 EXPOSE 3306 
 
