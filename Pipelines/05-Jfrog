@@ -44,12 +44,8 @@ node{
 	
 	server.upload spec: uploadSpec
        }
-
-       stage('Publish Build Info'){
-         server.publishBuildInfo buildInfo
-       }
         
-        stage('Archive') {
+       stage('Archive') {
          archiveArtifacts artifacts: 'target/*.war', followSymlinks: false    
         }    
         
