@@ -1,3 +1,0 @@
-Testing Git Ignore
-Hello GitHub
-Hello GitHub 123
