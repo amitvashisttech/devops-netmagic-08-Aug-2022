@@ -84,3 +84,31 @@
  2094  history
  2095  cat 02-Multi-App/docker-compose.yaml
 ```
+
+
+```
+ 2131  mkdir 04-Petclinic-Deploy
+ 2132  ls
+ 2133  cd 04-Petclinic-Deploy/
+ 2134  ls
+ 2135  cat ../03-Stack/docker-compose.yaml
+ 2136  ls
+ 2137  cp -rf ../03-Stack/docker-compose.yaml .
+ 2138  ls
+ 2139  vim docker-compose.yaml
+ 2140  ls
+ 2141  vim Dockerfile
+ 2142  ls
+ 2143  cp -rf /root/petclinic.war .
+ 2144  ls
+ 2145  docker-compose up -d
+ 2146  docker-compose ps
+ 2147  ls
+ 2148  docker-compose up -d
+ 2149  docker-compose up -d --build
+ 2150  vim Dockerfile
+ 2151  docker-compose up -d
+ 2152  docker-compose up -d --build
+ 2153  ls
+ 2154  > petclinic.war
+```
