@@ -5,6 +5,8 @@ node{
 
     def server = Artifactory.server "01"
     def buildinfo = Artifactory.newBuildInfo()
+    
+    def buildInfo = Artifactory.newBuildInfo()
  
     def Project_Path = "03-App-Code/petclinic-code"
 
@@ -44,6 +46,10 @@ node{
 	
 	server.upload spec: uploadSpec
        }
+
+       stage('Publish Build Info'){
+   server.publishBuildInfo buildInfo
+}
         
        stage('Archive') {
          archiveArtifacts artifacts: 'target/*.war', followSymlinks: false    
