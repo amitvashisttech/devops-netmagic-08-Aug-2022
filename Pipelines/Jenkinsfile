@@ -1,4 +1,13 @@
-node{ 
+node{
+
+
+ // Get Artifcatory Server Instace Detials
+
+    def server = Artifactory.server "01"
+    def buildinfo = Artifactory.newBuildInfo()
+    
+    def buildInfo = Artifactory.newBuildInfo()
+ 
     def Project_Path = "03-App-Code/petclinic-code"
 
         stage('Git CheckOut') {
@@ -23,8 +32,26 @@ node{
         stage('MAVEN - Package') {
          sh 'mvn package'
         } 
+
+        stage('Build Management') {
+		def uploadSpec = """{ 
+			"files": [
+			{
+			"pattern": "**/*.war",
+			"target": "petclinic-repo"
+			}
+		]
+
+	}"""
+	
+	server.upload spec: uploadSpec
+       }
+
+       stage('Publish Build Info'){
+   server.publishBuildInfo buildInfo
+}
         
-        stage('Archive') {
+       stage('Archive') {
          archiveArtifacts artifacts: 'target/*.war', followSymlinks: false    
         }    
         
